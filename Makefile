@@ -20,11 +20,18 @@ PAGES_DIR = static
 DEPLOY_BRANCH = gh-pages
 
 ################################################################################
+# USER OPTIONS
+################################################################################
+
+AUTHOR_NAME = Eli Gundry
+
+################################################################################
 # TARGETS
 ################################################################################
 
 # Display help commands
 help:
+	@echo 'Pandapress - Easy static site generation using Pandoc'
 	@echo 'Usage: make [command]'
 	@echo ''
 	@echo 'Available Commands:'
@@ -57,9 +64,11 @@ deploy: all
 
 # Create a new post
 new_post:
+	touch ${POSTS_DIR}/${name}.md
 
 # Create a new page
 new_page:
+	touch ${PAGES_DIR}/${name}.md
 
 # Delete all generated files
 clean:
